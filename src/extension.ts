@@ -7,7 +7,7 @@ import {
 function generateColors(number: number) {
   return Array(number).fill(0).map(() => {
     // Generate only random darker shades     
-    let hex = '#';
+    let hex:string = '#';
     for (let i = 0; i < 3; i++) {
       hex += (
         '0' + Math.floor((Math.random() * Math.pow(16, 2)) / 2).toString(16)
