@@ -6,7 +6,14 @@ import {
 
 function generateColors(number: number) {
   return Array(number).fill(0).map(() => {
-    return `#${(Math.random().toString(16) + '00000').slice(2,8)}`;
+    // Generate only random darker shades     
+    let hex = '#';
+    for (let i = 0; i < 3; i++) {
+      hex += (
+        '0' + Math.floor((Math.random() * Math.pow(16, 2)) / 2).toString(16)
+      ).slice(-2);
+    }
+    return hex;
   });
 }
 
